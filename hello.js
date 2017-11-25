@@ -24,11 +24,31 @@ function init() {
 
   scene.add(plane)
 
+  var cubeGeometory = new THREE.BoxGeometry(4, 4, 4)
+  var cubeMaterial = new THREE.MeshBasicMaterial({
+    color: 0xff00bb, wireframe: true
+  })
+  var cube = new THREE.Mesh(cubeGeometory, cubeMaterial)
+  cube.position.x = -4
+  cube.position.y = 3
+  cube.position.z = 0
+  scene.add(cube)
+
+  var sphereGeometry = new THREE.SphereGeometry(4, 20, 20)
+  var sphereMaterial = new THREE.MeshBasicMaterial({
+    color: 0x00aaff, wireframe: true
+  })
+  var sphere = new THREE.Mesh(sphereGeometry, sphereMaterial)
+  sphere.position.x = 20
+  sphere.position.y = 4
+  sphere.position.z = 2
+  scene.add(sphere)
+
   camera.position.x = -30
   camera.position.y = 40
-  camera.position.z = 60
+  camera.position.z = 50
   camera.lookAt(scene.position)
-  
+
 
   document.getElementById("WebGL-output")
   .appendChild(renderer.domElement)
