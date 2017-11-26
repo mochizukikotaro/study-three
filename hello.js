@@ -1,4 +1,4 @@
-function init() {
+function init () {
   var scene = new THREE.Scene()
   var camera = new THREE.PerspectiveCamera(
     45, window.innerWidth / window.innerHeight, 0.1, 1000
@@ -62,9 +62,22 @@ function init() {
   camera.position.z = 50
   camera.lookAt(scene.position)
 
+  function renderScene () {
+    requestAnimationFrame(renderScene)
+    renderer.render(scene, camera)
+  }
 
   document.getElementById("WebGL-output")
-  .appendChild(renderer.domElement)
-  renderer.render(scene, camera)
+    .appendChild(renderer.domElement)
+  renderScene()
+
+  var stats = initStats()
 }
+
+function initStats () {
+  var Stats = require('stats.js')
+  var stats = new Stats()
+}
+
+
 window.onload = init
