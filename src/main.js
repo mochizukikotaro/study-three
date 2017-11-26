@@ -62,17 +62,20 @@ function init () {
   camera.position.z = 50
   camera.lookAt(scene.position)
 
-  function renderScene () {
-    requestAnimationFrame(renderScene)
-    renderer.render(scene, camera)
-  }
 
   document.getElementById("WebGL-output")
     .appendChild(renderer.domElement)
 
+  var initStats = require('./stats.js')
+  var stats = initStats()
+
+  function renderScene () {
+    stats.update()
+    requestAnimationFrame(renderScene)
+    renderer.render(scene, camera)
+  }
+
   renderScene()
-  const initStats = require('./stats.js')
-  initStats()
 }
 
 
