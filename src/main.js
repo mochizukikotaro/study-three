@@ -1,3 +1,7 @@
+var scene
+var camera
+var renderer
+
 function init () {
 
   var controls = new function () {
@@ -9,12 +13,16 @@ function init () {
   gui.add(controls, 'rotationSpeed', 0, 0.5)
   gui.add(controls, 'bouncingSpeed', 0, 0.5)
 
-  var scene = new THREE.Scene()
-  var camera = new THREE.PerspectiveCamera(
+  // scene
+  scene = new THREE.Scene()
+
+  // camera
+  camera = new THREE.PerspectiveCamera(
     45, window.innerWidth / window.innerHeight, 0.1, 1000
   )
 
-  var renderer = new THREE.WebGLRenderer()
+  // renderer
+  renderer = new THREE.WebGLRenderer()
 
   // axes
   renderer.setClearColor(new THREE.Color(0xEEEEEE))
@@ -96,5 +104,11 @@ function init () {
   renderScene()
 }
 
+function onResize () {
+  camera.aspect = window.innerWidth / window.innerHeight
+  camera.updateProjectionMatrix()
+  renderer.setSize(window.innerWidth, window.innerHeight)
+}
+window.addEventListener('resize', onResize, false)
 
 window.onload = init
