@@ -1,7 +1,4 @@
-var Stats = require('Stats.js')
-
 function init () {
-
   console.log('Start 3D');
 
   var scene = new THREE.Scene()
@@ -72,21 +69,11 @@ function init () {
 
   document.getElementById("WebGL-output")
     .appendChild(renderer.domElement)
+
   renderScene()
-
-  var stats = initStats()
+  const initStats = require('./stats.js')
+  initStats()
 }
 
-function initStats () {
-  var stats = new Stats()
-  stats.setMode(0)
-  stats.domElement.style.position = 'absolute'
-  stats.domElement.style.left = '0px'
-  stats.domElement.style.top = '0px'
-  document.getElementById('Stats-output').appendChild(
-    stats.domElement
-  )
-  return stats
-}
 
 window.onload = init
