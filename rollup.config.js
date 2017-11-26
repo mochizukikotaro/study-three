@@ -5,7 +5,7 @@ import serve from 'rollup-plugin-serve'
 // import livereload from 'rollup-plugin-livereload'
 
 export default {
-  input: 'src/input.js',
+  input: 'src/main.js',
   output: {
     file: 'dist/bundle.js',
     format: 'iife',
