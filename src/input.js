@@ -1,17 +1,9 @@
-console.log(33);
-
-var sample = require( './sample' );
-sample()
-
-var Stats = require('stats.js')
-const s = new Stats()
-console.log(s);
-
-
-// --------------------------------------------
-
+var Stats = require('Stats.js')
 
 function init () {
+
+  console.log('Start 3D');
+
   var scene = new THREE.Scene()
   var camera = new THREE.PerspectiveCamera(
     45, window.innerWidth / window.innerHeight, 0.1, 1000
@@ -42,7 +34,7 @@ function init () {
   // cube
   var cubeGeometory = new THREE.BoxGeometry(4, 4, 4)
   var cubeMaterial = new THREE.MeshLambertMaterial({
-    color: 0xff00bb
+    color: 0xffbb00
   })
   var cube = new THREE.Mesh(cubeGeometory, cubeMaterial)
   cube.castShadow = true
@@ -68,8 +60,6 @@ function init () {
   spotLight.position.set(-20, 30, -5)
   scene.add(spotLight)
 
-
-
   camera.position.x = -30
   camera.position.y = 40
   camera.position.z = 50
@@ -88,9 +78,6 @@ function init () {
 }
 
 function initStats () {
-  var Stats = require('Stats.js')
-  console.log(333);
-  console.log(Stats);
   var stats = new Stats()
   stats.setMode(0)
   stats.domElement.style.position = 'absolute'
@@ -101,6 +88,5 @@ function initStats () {
   )
   return stats
 }
-
 
 window.onload = init
