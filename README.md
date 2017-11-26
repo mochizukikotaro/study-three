@@ -8,4 +8,8 @@ $ python -m SimpleHTTPServer
 ```
 
 
-npm install stats.js してみるか...
+config を足したあとにつぎのコマンド
+
+```
+$ rollup -c
+```

@@ -1,16 +1,24 @@
-import nodeResolve  from 'rollup-plugin-node-resolve'
+import resolve  from 'rollup-plugin-node-resolve'
 import commonjs     from 'rollup-plugin-commonjs'
 import babel        from 'rollup-plugin-babel'
 
 export default {
-  input: './src/input.js',
+  input: 'src/input.js',
   output: {
-    file: './dist/bundle.js',
+    file: 'dist/bundle.js',
     format: 'iife',
     moduleName: 'foo'
   },
+  watch: {
+    include: 'src/**'
+  },
   plugins: [
-    nodeResolve({ jsnext: true }), // npmモジュールを`node_modules`から読み込む
+    resolve({
+      jsnext: true,
+      customResolveOptions: {
+        moduleDirectory: 'node_modules'
+      }
+    }),
     commonjs(), // CommonJSモジュールをES6に変換
     babel() // ES5に変換
   ]
