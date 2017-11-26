@@ -1,21 +1,14 @@
 
 ```
 $ curl -L -O http://threejs.org/build/three.min.js
+$ curl -L -O https://raw.githubusercontent.com/dataarts/dat.gui/master/build/dat.gui.min.js
 ```
 
 ```
-$ python -m SimpleHTTPServer
+$ yarn
+$ rollup -c --watch
 ```
 
-
-config を足したあとにつぎのコマンド
-
 ```
-$ rollup -c
-```
-
-便利であれ
-
-```
-$ npm install --save-dev rollup-plugin-serve
+localhost:10001
 ```
