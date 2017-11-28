@@ -6,7 +6,8 @@
   "author": "Kotaro Mochizuki <mochizuki@basicinc.jp>",
   "license": "MIT",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "rollup -c  rollup.config.production.js"
   },
   "dependencies": {
     "dat.gui": "^0.6.1",
