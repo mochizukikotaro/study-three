@@ -8,10 +8,6 @@ export default {
     file: 'dist/bundle.js',
     format: 'iife',
     moduleName: 'foo',
-    external: [ 'Stats' ]
-  },
-  watch: {
-    include: 'src/**'
   },
   plugins: [
     resolve({

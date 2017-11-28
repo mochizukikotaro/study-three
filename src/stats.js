@@ -1,5 +1,4 @@
 module.exports = function initStats () {
-  var Stats = require('Stats.js')
   var stats = new Stats()
   stats.setMode(0)
   stats.domElement.style.position = 'absolute'

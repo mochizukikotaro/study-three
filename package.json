@@ -13,10 +13,7 @@
     "start": "node server.js",
     "heroku-postbuild": "rollup -c  rollup.config.production.js"
   },
-  "dependencies": {
-    "dat.gui": "^0.6.1",
-    "stats.js": "^0.17.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-preset-es2015-rollup": "^3.0.0",
