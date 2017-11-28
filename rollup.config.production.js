@@ -7,7 +7,8 @@ export default {
   output: {
     file: 'dist/bundle.js',
     format: 'iife',
-    moduleName: 'foo'
+    moduleName: 'foo',
+    external: [ 'Stats' ]
   },
   watch: {
     include: 'src/**'
